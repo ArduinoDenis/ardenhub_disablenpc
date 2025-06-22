@@ -1,14 +1,14 @@
 local function DisableNPCs()
-    -- Disabilita la generazione di NPC
+    -- Disable the generation of NPCs
     SetPedDensityMultiplierThisFrame(Config.DensityMultiplier.pedDensity)
     SetScenarioPedDensityMultiplierThisFrame(Config.DensityMultiplier.pedDensity, Config.DensityMultiplier.pedDensity)
     
-    -- Disabilita il traffico veicolare
+    -- Disable vehicular traffic
     SetVehicleDensityMultiplierThisFrame(Config.DensityMultiplier.vehicleDensity)
     SetRandomVehicleDensityMultiplierThisFrame(Config.DensityMultiplier.vehicleDensity)
     SetParkedVehicleDensityMultiplierThisFrame(Config.DensityMultiplier.vehicleDensity)
 
-    -- Disabilita vari tipi di NPC in base al config
+    -- Disables various types of NPCs based on the config
     if Config.DisableNPC.peds then
         SetPedPopulationBudget(0)
     end
@@ -18,17 +18,17 @@ local function DisableNPCs()
     end
 
     if Config.DisableNPC.emergencyVehicles then
-        DisableDispatchService(1) -- Polizia
-        DisableDispatchService(2) -- Pompieri
-        DisableDispatchService(3) -- Ambulanze
+        DisableDispatchService(1) -- Police
+        DisableDispatchService(2) -- Firefighters
+        DisableDispatchService(3) -- Ambulances
     end
 
     if Config.DisableNPC.garbageTrucks then
-        DisableDispatchService(11) -- Camion spazzatura
+        DisableDispatchService(11) -- Garbage truck
     end
 end
 
--- Loop principale
+-- Loop main
 Citizen.CreateThread(function()
     while true do
         DisableNPCs()
