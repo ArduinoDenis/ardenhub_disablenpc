@@ -14,7 +14,7 @@ A simple FiveM script to disable NPCs (peds, vehicles, emergency vehicles, garba
 1. Download or clone this repository into your server's `resources` folder.
 2. Add the following line to your `server.cfg`:
    ```
-   ensure ardenhub_toglinpc
+   ensure ardenhub_disablenpc
    ```
 3. Edit `config.lua` to customize which NPCs to disable and set density multipliers.
 
