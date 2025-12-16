@@ -18,13 +18,14 @@ local function DisableNPCs()
     end
 
     if Config.DisableNPC.emergencyVehicles then
-        DisableDispatchService(1) -- Police
-        DisableDispatchService(2) -- Firefighters
-        DisableDispatchService(3) -- Ambulances
+        -- Usa EnableDispatchService con false per disabilitare
+        EnableDispatchService(1, false) -- Police
+        EnableDispatchService(2, false) -- Firefighters
+        EnableDispatchService(3, false) -- Ambulances
     end
 
     if Config.DisableNPC.garbageTrucks then
-        DisableDispatchService(11) -- Garbage truck
+        EnableDispatchService(11, false) 
     end
 end
 
