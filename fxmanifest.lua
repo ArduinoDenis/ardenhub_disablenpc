@@ -1,10 +1,23 @@
 fx_version 'cerulean'
 game 'gta5'
 author 'arduinodenis.it'
-description 'ArDenHub - disable NPC'
+description 'script che toglie NPC e traffico'
 version '1.0.0'
+lua54 'yes'
+
+shared_scripts {
+    '@ox_lib/init.lua',
+    'config.lua'
+}
 
 client_scripts {
-    'config.lua',
     'client.lua'
+}
+
+server_scripts {
+    'server.lua'
+}
+
+dependencies {
+    'ox_lib'
 }
